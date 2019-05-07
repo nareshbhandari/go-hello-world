@@ -4,9 +4,6 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ["push", "gcr.io/high-hue-237416/go-hello-world"]
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['beta', 'run', 'deploy', 'go-hello', '--namespace', 'run', '--image', 'gcr.io/high-hue-237416/go-hello-world']
-    env:
-      - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
-      - 'CLOUDSDK_CONTAINER_CLUSTER=google-cluster'
+    args: ['beta', 'run', 'deploy', 'go-hello', '--namespace', 'run', '--image', 'gcr.io/high-hue-237416/go-hello-world', '--cluster', 'google-cluster', '--cluster-location', 'us-central1-c']
 images:
   - gcr.io/high-hue-237416/go-hello-world
