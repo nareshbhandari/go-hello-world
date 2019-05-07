@@ -4,6 +4,6 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ["push", "gcr.io/high-hue-237416/go-hello-world"]
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['beta', 'run', 'deploy', 'go-hello', '--image', 'gcr.io/high-hue-237416/go-hello-world', '--region', 'us-central1']
+    args: ['beta', 'run', 'deploy', 'go-hello', '--namespace', 'run', '--image', 'gcr.io/high-hue-237416/go-hello-world', '--region', 'us-central1']
 images:
   - gcr.io/high-hue-237416/go-hello-world
